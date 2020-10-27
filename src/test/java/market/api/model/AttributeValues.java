@@ -1,5 +1,8 @@
 package market.api.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class AttributeValues {
     private Integer attributeId;
     private Integer attributeValueId;

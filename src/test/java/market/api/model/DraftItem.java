@@ -1,7 +1,10 @@
 package market.api.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import java.util.List;
 
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class DraftItem {
     private Integer categoryId; //
     private Integer groupId; //

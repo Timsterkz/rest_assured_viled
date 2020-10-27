@@ -6,6 +6,7 @@ import com.fasterxml.jackson.databind.ObjectWriter;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import market.api.model.*;
+import market.api.restassured.spec.Utils;
 
 import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
@@ -190,9 +191,8 @@ public class RestAssuredSteps {
     }
 
     public static void addAttributes(String token) throws JsonProcessingException {
-        byte[] array = new byte[7]; // length is bounded by 7
-        new Random().nextBytes(array);
-        String generatedString = new String(array, StandardCharsets.UTF_8);
+
+        String generatedString = Utils.getRandomString(10);
 
         ValuesOnDiffLocale names = new ValuesOnDiffLocale(generatedString, generatedString, generatedString, generatedString, generatedString);
 
@@ -219,9 +219,8 @@ public class RestAssuredSteps {
     }
 
     public static void addAttributesValues(String token) {
-        byte[] array = new byte[7]; // length is bounded by 7
-        new Random().nextBytes(array);
-        String generatedString = new String(array, StandardCharsets.UTF_8);
+        String generatedString = Utils.getRandomString(10);
+
         ValuesOnDiffLocale names = new ValuesOnDiffLocale(generatedString, generatedString,generatedString,generatedString,generatedString);
 
         AttributeValues attributeValues = new AttributeValues(attributId, true, 0, names);
@@ -273,9 +272,7 @@ public class RestAssuredSteps {
     public static void createOrUpdateDraftItem(String token) throws JsonProcessingException {
         AttributeValues attributes1 =  new AttributeValues( attributId, attributeValueId,  true, "value");
         AttributeValues attributes2 =  new AttributeValues( attributId, attributeValueId,  true, "value1");
-        byte[] array = new byte[7]; // length is bounded by 7
-        new Random().nextBytes(array);
-        String generatedString = new String(array, StandardCharsets.UTF_8);
+        String generatedString = Utils.getRandomString(10);
         List<AttributeValues> attributes = Arrays.asList(attributes1,attributes2);
         List<Integer> stockIds = Collections.singletonList(stockId);
 
