@@ -23,7 +23,7 @@
 <tr>
 <td>
 <div class="infoBox" id="tests">
-<div class="counter">11</div>
+<div class="counter">8</div>
 <p>tests</p>
 </div>
 </td>
@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">11.784s</div>
+<div class="counter">6.513s</div>
 <p>duration</p>
 </div>
 </td>
@@ -66,9 +66,6 @@
 <li>
 <a href="#tab1">Standard output</a>
 </li>
-<li>
-<a href="#tab2">Standard error</a>
-</li>
 </ul>
 <div id="tab0" class="tab">
 <h2>Tests</h2>
@@ -82,69 +79,51 @@
 </tr>
 </thead>
 <tr>
-<td class="success">добавление атрибутов</td>
-<td class="success">AddAttributes()</td>
-<td class="success">0.677s</td>
-<td class="success">passed</td>
-</tr>
-<tr>
-<td class="success">добавление значение атрибутов</td>
-<td class="success">AddAttributesValues()</td>
-<td class="success">0.627s</td>
-<td class="success">passed</td>
-</tr>
-<tr>
 <td class="success">Создание склада</td>
 <td class="success">CreationOfStock()</td>
-<td class="success">0.818s</td>
+<td class="success">0.483s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">список складов</td>
 <td class="success">GetListOfStock()</td>
-<td class="success">0.670s</td>
+<td class="success">0.443s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">Проверка на существования мерчанта с нужными данными</td>
 <td class="success">GetMerchant()</td>
-<td class="success">3.433s</td>
+<td class="success">2.218s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">создание драфтового айтема</td>
 <td class="success">createDraftItem()</td>
-<td class="success">0.682s</td>
+<td class="success">0.389s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">отправка драфтового айтема на модерацию</td>
 <td class="success">createItem()</td>
-<td class="success">0.645s</td>
-<td class="success">passed</td>
-</tr>
-<tr>
-<td class="success">удаление атрибутов</td>
-<td class="success">deleteAttribute()</td>
-<td class="success">0.791s</td>
+<td class="success">0.391s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">удаление складов</td>
 <td class="success">deleteStock()</td>
-<td class="success">0.664s</td>
+<td class="success">0.453s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">список атрибутов и их значении</td>
 <td class="success">listOfAttrAndValues()</td>
-<td class="success">0.734s</td>
+<td class="success">0.465s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">дерево категории</td>
 <td class="success">treeOfcategory()</td>
-<td class="success">2.043s</td>
+<td class="success">1.671s</td>
 <td class="success">passed</td>
 </tr>
 </table>
@@ -153,13 +132,13 @@
 <h2>Standard output</h2>
 <span class="code">
 <pre>{
-    &quot;accessToken&quot;: &quot;eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJOcXNlak5IZHotNEpacDFXc0ZLdGlNalRLcDF1M2didThmb2dobVJ5NFVJIn0.eyJqdGkiOiIzOWYxYzVhMS00ZGQwLTQyYTEtOGZmMC0zOWE1MTgxZWJiY2UiLCJleHAiOjE2MDM3OTk2OTMsIm5iZiI6MCwiaWF0IjoxNjAzNzc4MDkzLCJpc3MiOiJodHRwczovL2tleWNsb2FrLnRlc3QudmxpZmUua3ovYXV0aC9yZWFsbXMvU3ByaW5nQm9vdFRlc3QiLCJhdWQiOlsicmVhbG0tbWFuYWdlbWVudCIsImFjY291bnQiXSwic3ViIjoiNWJlNWJkNDQtMzFkNS00NGIyLTk1OTMtZmQxNjQ0NmVhZmI5IiwidHlwIjoiQmVhcmVyIiwiYXpwIjoibG9naW4tYXBwIiwiYXV0aF90aW1lIjowLCJzZXNzaW9uX3N0YXRlIjoiMTg0YTdhYWUtMTUyYy00MDRlLWE3MzUtY2M3MTFiZmFlNDNjIiwiYWNyIjoiMSIsInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJtYXJrZXRfbW9kZXJhdG9yIiwibWFya2V0X2NvbnRyYWN0X21hbmFnZXIiLCJvZmZsaW5lX2FjY2VzcyIsIm1lcmNoYW50IiwidW1hX2F1dGhvcml6YXRpb24iXX0sInJlc291cmNlX2FjY2VzcyI6eyJyZWFsbS1tYW5hZ2VtZW50Ijp7InJvbGVzIjpbInZpZXctcmVhbG0iLCJtYW5hZ2UtdXNlcnMiLCJ2aWV3LXVzZXJzIiwidmlldy1jbGllbnRzIiwicXVlcnktY2xpZW50cyIsInF1ZXJ5LWdyb3VwcyIsInF1ZXJ5LXVzZXJzIl19LCJhY2NvdW50Ijp7InJvbGVzIjpbIm1hbmFnZS1hY2NvdW50IiwibWFuYWdlLWFjY291bnQtbGlua3MiLCJ2aWV3LXByb2ZpbGUiXX19LCJzY29wZSI6ImVtYWlsIHByb2ZpbGUiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsInByZWZlcnJlZF91c2VybmFtZSI6Im1vZGVyYXRvckBjb2RldmllLmt6In0.WExRQftnQLHJiRoDCtJ3s18yAVsSNHf_QUkaEgUEc1VlfBHblXskp5ZgJt1XWdxGUJHV-A-CQoeUAF6Gw1ZyWqTP76UgYhuk8RpU_Se6akxQaAeb6UhDx9K3EAE9nbCcCrH-3viotQHVQjiTO5CF7k6HO9Ibs1KFU_5RUzqhgEsLjncl0yqDXdSR0hB7-8W9V0re7aJXu7VruE7kVOaLlSDAJ39h7deSNy060E_6yv41gROAzgsyFp7JmCLAy6I7vyPtvKSwxBD3nIx2pceMcwvBt6GyXcJAcSLY1_MKgiK_O3j4wYr3BI2zm4tkKYxI2FgjXcj-al2x882eaAqUvQ&quot;,
+    &quot;accessToken&quot;: &quot;eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJOcXNlak5IZHotNEpacDFXc0ZLdGlNalRLcDF1M2didThmb2dobVJ5NFVJIn0.eyJqdGkiOiJkMmYzMDE1Yy0xOGQ0LTQ4MTAtYjUzNS1jZDg2M2FmYzg3ZTQiLCJleHAiOjE2MDM4MDA4NzEsIm5iZiI6MCwiaWF0IjoxNjAzNzc5MjcxLCJpc3MiOiJodHRwczovL2tleWNsb2FrLnRlc3QudmxpZmUua3ovYXV0aC9yZWFsbXMvU3ByaW5nQm9vdFRlc3QiLCJhdWQiOlsicmVhbG0tbWFuYWdlbWVudCIsImFjY291bnQiXSwic3ViIjoiNWJlNWJkNDQtMzFkNS00NGIyLTk1OTMtZmQxNjQ0NmVhZmI5IiwidHlwIjoiQmVhcmVyIiwiYXpwIjoibG9naW4tYXBwIiwiYXV0aF90aW1lIjowLCJzZXNzaW9uX3N0YXRlIjoiM2U3ZTdmMmEtMzliNy00NDgyLWFjZmUtODQwMjQ5MDMzOTc0IiwiYWNyIjoiMSIsInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJtYXJrZXRfbW9kZXJhdG9yIiwibWFya2V0X2NvbnRyYWN0X21hbmFnZXIiLCJvZmZsaW5lX2FjY2VzcyIsIm1lcmNoYW50IiwidW1hX2F1dGhvcml6YXRpb24iXX0sInJlc291cmNlX2FjY2VzcyI6eyJyZWFsbS1tYW5hZ2VtZW50Ijp7InJvbGVzIjpbInZpZXctcmVhbG0iLCJtYW5hZ2UtdXNlcnMiLCJ2aWV3LXVzZXJzIiwidmlldy1jbGllbnRzIiwicXVlcnktY2xpZW50cyIsInF1ZXJ5LWdyb3VwcyIsInF1ZXJ5LXVzZXJzIl19LCJhY2NvdW50Ijp7InJvbGVzIjpbIm1hbmFnZS1hY2NvdW50IiwibWFuYWdlLWFjY291bnQtbGlua3MiLCJ2aWV3LXByb2ZpbGUiXX19LCJzY29wZSI6ImVtYWlsIHByb2ZpbGUiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsInByZWZlcnJlZF91c2VybmFtZSI6Im1vZGVyYXRvckBjb2RldmllLmt6In0.WDjsNLMiwLN6jh6DGQo28UpQuBOB6PTkxBGHP0AvPGD3sQGa9eP6qC60G_0TWo0qiKSCr8ukMmt2Muk215YSVea3fjaT-hh-6NO0XZAtVXl_O-1zYyqNupIRwMmveQt7MWEAYTVzdid7Z6Ch52HFE2dOf4ZcvS6-TW-RmHRRP0KStHoNF62qQyPb8edzRK2zVuHoc_GhdeOOeBEtuuTHzPb_fVGVfzOrp-ESIQWtjlegmQbTq4A4LJx77aVFlJa6QIa_4rWMssmuq88I4oAqCyiwI8sTDlEUFztxbFLo2zlnFl4F5uhUyOc0vnYkt6zFdvcLCZ-h3AH0xmWzPQlVOg&quot;,
     &quot;expiresIn&quot;: 21600,
     &quot;refreshExpiresIn&quot;: 3888000,
-    &quot;refreshToken&quot;: &quot;eyJhbGciOiJIUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJlN2JiM2M3OS1iNzMxLTRlNDItYTc0ZC1mNDc3MGFmY2UyMTkifQ.eyJqdGkiOiI2YmI1MjBiNi01OWUzLTQ1MDItODRmZC01OWE1NTFhZDY2NGQiLCJleHAiOjE2MDc2NjYwOTMsIm5iZiI6MCwiaWF0IjoxNjAzNzc4MDkzLCJpc3MiOiJodHRwczovL2tleWNsb2FrLnRlc3QudmxpZmUua3ovYXV0aC9yZWFsbXMvU3ByaW5nQm9vdFRlc3QiLCJhdWQiOiJodHRwczovL2tleWNsb2FrLnRlc3QudmxpZmUua3ovYXV0aC9yZWFsbXMvU3ByaW5nQm9vdFRlc3QiLCJzdWIiOiI1YmU1YmQ0NC0zMWQ1LTQ0YjItOTU5My1mZDE2NDQ2ZWFmYjkiLCJ0eXAiOiJSZWZyZXNoIiwiYXpwIjoibG9naW4tYXBwIiwiYXV0aF90aW1lIjowLCJzZXNzaW9uX3N0YXRlIjoiMTg0YTdhYWUtMTUyYy00MDRlLWE3MzUtY2M3MTFiZmFlNDNjIiwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbIm1hcmtldF9tb2RlcmF0b3IiLCJtYXJrZXRfY29udHJhY3RfbWFuYWdlciIsIm9mZmxpbmVfYWNjZXNzIiwibWVyY2hhbnQiLCJ1bWFfYXV0aG9yaXphdGlvbiJdfSwicmVzb3VyY2VfYWNjZXNzIjp7InJlYWxtLW1hbmFnZW1lbnQiOnsicm9sZXMiOlsidmlldy1yZWFsbSIsIm1hbmFnZS11c2VycyIsInZpZXctdXNlcnMiLCJ2aWV3LWNsaWVudHMiLCJxdWVyeS1jbGllbnRzIiwicXVlcnktZ3JvdXBzIiwicXVlcnktdXNlcnMiXX0sImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoiZW1haWwgcHJvZmlsZSJ9.aAwcQB1pS8_649F0EfiC4sv7xqxmoK6Z44Aj9XT5V7Y&quot;,
-    &quot;refreshTokenExpDate&quot;: &quot;2020-12-11T05:54:53.177Z&quot;,
+    &quot;refreshToken&quot;: &quot;eyJhbGciOiJIUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJlN2JiM2M3OS1iNzMxLTRlNDItYTc0ZC1mNDc3MGFmY2UyMTkifQ.eyJqdGkiOiIzYzdlNTZhYi0yZjVlLTQ2MWEtODU5MC0zM2JkYWZlZmJiZTUiLCJleHAiOjE2MDc2NjcyNzEsIm5iZiI6MCwiaWF0IjoxNjAzNzc5MjcxLCJpc3MiOiJodHRwczovL2tleWNsb2FrLnRlc3QudmxpZmUua3ovYXV0aC9yZWFsbXMvU3ByaW5nQm9vdFRlc3QiLCJhdWQiOiJodHRwczovL2tleWNsb2FrLnRlc3QudmxpZmUua3ovYXV0aC9yZWFsbXMvU3ByaW5nQm9vdFRlc3QiLCJzdWIiOiI1YmU1YmQ0NC0zMWQ1LTQ0YjItOTU5My1mZDE2NDQ2ZWFmYjkiLCJ0eXAiOiJSZWZyZXNoIiwiYXpwIjoibG9naW4tYXBwIiwiYXV0aF90aW1lIjowLCJzZXNzaW9uX3N0YXRlIjoiM2U3ZTdmMmEtMzliNy00NDgyLWFjZmUtODQwMjQ5MDMzOTc0IiwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbIm1hcmtldF9tb2RlcmF0b3IiLCJtYXJrZXRfY29udHJhY3RfbWFuYWdlciIsIm9mZmxpbmVfYWNjZXNzIiwibWVyY2hhbnQiLCJ1bWFfYXV0aG9yaXphdGlvbiJdfSwicmVzb3VyY2VfYWNjZXNzIjp7InJlYWxtLW1hbmFnZW1lbnQiOnsicm9sZXMiOlsidmlldy1yZWFsbSIsIm1hbmFnZS11c2VycyIsInZpZXctdXNlcnMiLCJ2aWV3LWNsaWVudHMiLCJxdWVyeS1jbGllbnRzIiwicXVlcnktZ3JvdXBzIiwicXVlcnktdXNlcnMiXX0sImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoiZW1haWwgcHJvZmlsZSJ9.O1lhtlNI4XoQ0gJSgYxKW59VEp6dmIqoGJzaR8w04mU&quot;,
+    &quot;refreshTokenExpDate&quot;: &quot;2020-12-11T06:14:31.183Z&quot;,
     &quot;tokenType&quot;: &quot;bearer&quot;,
-    &quot;sessionState&quot;: &quot;184a7aae-152c-404e-a735-cc711bfae43c&quot;,
+    &quot;sessionState&quot;: &quot;3e7e7f2a-39b7-4482-acfe-840249033974&quot;,
     &quot;scope&quot;: &quot;email profile&quot;
 }
 {
@@ -232,8 +211,8 @@
   } ]
 }
 {
-    &quot;id&quot;: 554,
-    &quot;name&quot;: &quot;Stock8&quot;,
+    &quot;id&quot;: 560,
+    &quot;name&quot;: &quot;Stock14&quot;,
     &quot;storeName&quot;: &quot;StoreName213&quot;,
     &quot;cityDto&quot;: {
         &quot;id&quot;: 4,
@@ -484,8 +463,8 @@
             &quot;active&quot;: true
         },
         {
-            &quot;id&quot;: 554,
-            &quot;name&quot;: &quot;Stock8&quot;,
+            &quot;id&quot;: 560,
+            &quot;name&quot;: &quot;Stock14&quot;,
             &quot;storeName&quot;: &quot;StoreName213&quot;,
             &quot;cityDto&quot;: {
                 &quot;id&quot;: 4,
@@ -22490,7 +22469,7 @@
             ]
         }
     ],
-    &quot;timestamp&quot;: 1603775039310
+    &quot;timestamp&quot;: 1603778657118
 }
 30886
 {
@@ -22517,279 +22496,74 @@
 }
 {
   &quot;categoryId&quot; : 30886,
-  &quot;isEditable&quot; : true,
-  &quot;isRequired&quot; : true,
-  &quot;isDefault&quot; : false,
-  &quot;status&quot; : 0,
-  &quot;names&quot; : {
-    &quot;en&quot; : &quot;�(\u0002���&quot;,
-    &quot;ru&quot; : &quot;�(\u0002���&quot;,
-    &quot;kk&quot; : &quot;�(\u0002���&quot;,
-    &quot;zh&quot; : &quot;�(\u0002���&quot;,
-    &quot;cn&quot; : &quot;�(\u0002���&quot;
-  }
-}
-market.api.model.Attribute@7427fd29
-{
-    &quot;id&quot;: 3979,
-    &quot;names&quot;: {
-        &quot;en&quot;: &quot;�(?���&quot;,
-        &quot;ru&quot;: &quot;�(?���&quot;,
-        &quot;kk&quot;: &quot;�(?���&quot;,
-        &quot;zh&quot;: &quot;�(?���&quot;,
-        &quot;cn&quot;: &quot;�(?���&quot;
-    },
-    &quot;status&quot;: 0,
-    &quot;isRequired&quot;: true,
-    &quot;isEditable&quot;: true,
-    &quot;isDefault&quot;: false,
-    &quot;values&quot;: [
-        
-    ],
-    &quot;attributeSection&quot;: 1,
-    &quot;categoryId&quot;: 30886
-}
-{
-    &quot;id&quot;: 3979,
-    &quot;names&quot;: {
-        &quot;en&quot;: &quot;�(?���&quot;,
-        &quot;ru&quot;: &quot;�(?���&quot;,
-        &quot;kk&quot;: &quot;�(?���&quot;,
-        &quot;zh&quot;: &quot;�(?���&quot;,
-        &quot;cn&quot;: &quot;�(?���&quot;
-    },
-    &quot;status&quot;: 0,
-    &quot;isRequired&quot;: true,
-    &quot;isEditable&quot;: true,
-    &quot;isDefault&quot;: false,
-    &quot;values&quot;: [
-        
-    ],
-    &quot;attributeSection&quot;: 1,
-    &quot;categoryId&quot;: 30886
-}
-{
-    &quot;id&quot;: 372437,
-    &quot;attributeId&quot;: 3979,
-    &quot;value&quot;: {
-        &quot;en&quot;: &quot;ddzMA�K&quot;,
-        &quot;ru&quot;: &quot;ddzMA�K&quot;,
-        &quot;kk&quot;: &quot;ddzMA�K&quot;,
-        &quot;zh&quot;: &quot;ddzMA�K&quot;,
-        &quot;cn&quot;: &quot;ddzMA�K&quot;
-    },
-    &quot;status&quot;: 0,
-    &quot;isSelected&quot;: false
-}
-{
-  &quot;categoryId&quot; : 30886,
   &quot;groupId&quot; : 0,
-  &quot;name&quot; : &quot;���!��v&quot;,
-  &quot;productCode&quot; : &quot;���!��v&quot;,
-  &quot;vendorCode&quot; : &quot;���!��v&quot;,
+  &quot;name&quot; : &quot;\u0018yj����&quot;,
+  &quot;productCode&quot; : &quot;\u0018yj����&quot;,
+  &quot;vendorCode&quot; : &quot;\u0018yj����&quot;,
   &quot;price&quot; : &quot;4444&quot;,
-  &quot;brand&quot; : &quot;���!��v&quot;,
+  &quot;brand&quot; : &quot;\u0018yj����&quot;,
   &quot;attributes&quot; : [ {
-    &quot;attributeId&quot; : 3979,
-    &quot;attributeValueId&quot; : 372437,
+    &quot;attributeId&quot; : null,
+    &quot;attributeValueId&quot; : null,
     &quot;status&quot; : null,
     &quot;value&quot; : null,
     &quot;value1&quot; : &quot;value&quot;,
-    &quot;required&quot; : true,
-    &quot;selected&quot; : null
+    &quot;selected&quot; : null,
+    &quot;required&quot; : true
   }, {
-    &quot;attributeId&quot; : 3979,
-    &quot;attributeValueId&quot; : 372437,
+    &quot;attributeId&quot; : null,
+    &quot;attributeValueId&quot; : null,
     &quot;status&quot; : null,
     &quot;value&quot; : null,
     &quot;value1&quot; : &quot;value1&quot;,
-    &quot;required&quot; : true,
-    &quot;selected&quot; : null
+    &quot;selected&quot; : null,
+    &quot;required&quot; : true
   } ],
-  &quot;stockIds&quot; : [ 554 ]
+  &quot;stockIds&quot; : [ 560 ]
 }
 {
-    &quot;id&quot;: 17454,
-    &quot;name&quot;: &quot;���!��v&quot;,
+    &quot;id&quot;: 17460,
+    &quot;name&quot;: &quot;?yj����&quot;,
     &quot;groupId&quot;: 0,
     &quot;categoryId&quot;: 30886,
-    &quot;dateCreated&quot;: &quot;2020-10-27T05:55:04.733+0000&quot;,
-    &quot;vendorCode&quot;: &quot;���!��v&quot;,
-    &quot;description&quot;: &quot;���!��v&quot;,
+    &quot;dateCreated&quot;: &quot;2020-10-27T06:14:38.629+0000&quot;,
+    &quot;vendorCode&quot;: &quot;?yj����&quot;,
+    &quot;description&quot;: &quot;?yj����&quot;,
     &quot;productCode&quot;: null,
     &quot;presentationUrl&quot;: null,
     &quot;price&quot;: 4444,
     &quot;stockIds&quot;: [
-        554
+        560
     ],
     &quot;attributes&quot;: [
-        {
-            &quot;value&quot;: null,
-            &quot;attributeId&quot;: 3979,
-            &quot;isRequired&quot;: false,
-            &quot;attributeValueId&quot;: 372437
-        }
+        
     ],
     &quot;itemImages&quot;: null,
-    &quot;brand&quot;: &quot;���!��v&quot;
+    &quot;brand&quot;: &quot;?yj����&quot;
 }
 {
-    &quot;id&quot;: 17454,
-    &quot;name&quot;: &quot;���!��v&quot;,
+    &quot;id&quot;: 17460,
+    &quot;name&quot;: &quot;?yj����&quot;,
     &quot;groupId&quot;: 0,
     &quot;categoryId&quot;: 30886,
-    &quot;dateCreated&quot;: &quot;2020-10-27T05:55:04.733+0000&quot;,
-    &quot;vendorCode&quot;: &quot;���!��v&quot;,
-    &quot;description&quot;: &quot;���!��v&quot;,
+    &quot;dateCreated&quot;: &quot;2020-10-27T06:14:38.629+0000&quot;,
+    &quot;vendorCode&quot;: &quot;?yj����&quot;,
+    &quot;description&quot;: &quot;?yj����&quot;,
     &quot;productCode&quot;: null,
     &quot;presentationUrl&quot;: null,
     &quot;price&quot;: 4444,
     &quot;stockIds&quot;: [
-        554
+        560
     ],
     &quot;attributes&quot;: [
-        {
-            &quot;value&quot;: null,
-            &quot;attributeId&quot;: 3979,
-            &quot;isRequired&quot;: false,
-            &quot;attributeValueId&quot;: 372437
-        }
+        
     ],
     &quot;itemImages&quot;: null,
-    &quot;brand&quot;: &quot;���!��v&quot;
+    &quot;brand&quot;: &quot;?yj����&quot;
 }
 
-Deleted!
 Draft items status updated to moderation!
 Draft items status updated to moderation!
-</pre>
-</span>
-</div>
-<div id="tab2" class="tab">
-<h2>Standard error</h2>
-<span class="code">
-<pre>Oct 27, 2020 11:54:51 AM org.aspectj.weaver.tools.Jdk14Trace error
-SEVERE: org/codehaus/groovy/runtime/callsite/AbstractCallSite
-java.lang.RuntimeException: bad non-abstract method with no code: void org.codehaus.groovy.runtime.callsite.AbstractCallSite.&lt;init&gt;(org.codehaus.groovy.runtime.callsite.CallSiteArray, int, java.lang.String) on public class org.codehaus.groovy.runtime.callsite.AbstractCallSite
-	at org.aspectj.weaver.bcel.LazyMethodGen.&lt;init&gt;(LazyMethodGen.java:223)
-	at org.aspectj.weaver.bcel.LazyClassGen.&lt;init&gt;(LazyClassGen.java:308)
-	at org.aspectj.weaver.bcel.BcelObjectType.getLazyClassGen(BcelObjectType.java:563)
-	at org.aspectj.weaver.bcel.BcelWeaver.weave(BcelWeaver.java:1693)
-	at org.aspectj.weaver.bcel.BcelWeaver.weaveWithoutDump(BcelWeaver.java:1644)
-	at org.aspectj.weaver.bcel.BcelWeaver.weaveAndNotify(BcelWeaver.java:1409)
-	at org.aspectj.weaver.bcel.BcelWeaver.weave(BcelWeaver.java:1191)
-	at org.aspectj.weaver.tools.WeavingAdaptor.getWovenBytes(WeavingAdaptor.java:527)
-	at org.aspectj.weaver.tools.WeavingAdaptor.weaveClass(WeavingAdaptor.java:363)
-	at org.aspectj.weaver.loadtime.Aj.preProcess(Aj.java:121)
-	at org.aspectj.weaver.loadtime.ClassPreProcessorAgentAdapter.transform(ClassPreProcessorAgentAdapter.java:54)
-	at sun.instrument.TransformerManager.transform(TransformerManager.java:188)
-	at sun.instrument.InstrumentationImpl.transform(InstrumentationImpl.java:428)
-	at java.lang.ClassLoader.defineClass1(Native Method)
-	at java.lang.ClassLoader.defineClass(ClassLoader.java:756)
-	at java.lang.ClassLoader.defineClass(ClassLoader.java:635)
-	at org.codehaus.groovy.reflection.SunClassLoader.define(SunClassLoader.java:94)
-	at org.codehaus.groovy.runtime.callsite.GroovySunClassLoader.loadAbstract(GroovySunClassLoader.java:72)
-	at org.codehaus.groovy.runtime.callsite.GroovySunClassLoader.&lt;init&gt;(GroovySunClassLoader.java:54)
-	at org.codehaus.groovy.runtime.callsite.GroovySunClassLoader.&lt;init&gt;(GroovySunClassLoader.java:49)
-	at org.codehaus.groovy.runtime.callsite.GroovySunClassLoader.lambda$static$0(GroovySunClassLoader.java:40)
-	at java.security.AccessController.doPrivileged(Native Method)
-	at org.codehaus.groovy.runtime.callsite.GroovySunClassLoader.&lt;clinit&gt;(GroovySunClassLoader.java:37)
-	at org.codehaus.groovy.runtime.callsite.CallSiteGenerator.isCompilable(CallSiteGenerator.java:256)
-	at org.codehaus.groovy.reflection.CachedMethod.createStaticMetaMethodSite(CachedMethod.java:312)
-	at org.codehaus.groovy.runtime.callsite.StaticMetaMethodSite.createStaticMetaMethodSite(StaticMetaMethodSite.java:112)
-	at groovy.lang.MetaClassImpl.createStaticSite(MetaClassImpl.java:3500)
-	at org.codehaus.groovy.runtime.callsite.CallSiteArray.createCallStaticSite(CallSiteArray.java:74)
-	at org.codehaus.groovy.runtime.callsite.CallSiteArray.createCallSite(CallSiteArray.java:156)
-	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:47)
-	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:125)
-	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:130)
-	at io.restassured.internal.common.assertion.AssertParameter.notNull(AssertParameter.groovy:21)
-	at io.restassured.config.SSLConfig.&lt;init&gt;(SSLConfig.java:192)
-	at io.restassured.config.SSLConfig.&lt;init&gt;(SSLConfig.java:184)
-	at io.restassured.config.RestAssuredConfig.&lt;init&gt;(RestAssuredConfig.java:41)
-	at io.restassured.RestAssured.&lt;clinit&gt;(RestAssured.java:421)
-	at market.tests.TestBase.loginMerchant(TestBase.java:20)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:686)
-	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
-	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
-	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:149)
-	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptLifecycleMethod(TimeoutExtension.java:126)
-	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptBeforeAllMethod(TimeoutExtension.java:68)
-	at org.junit.jupiter.engine.execution.ExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(ExecutableInvoker.java:115)
-	at org.junit.jupiter.engine.execution.ExecutableInvoker.lambda$invoke$0(ExecutableInvoker.java:105)
-	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
-	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
-	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
-	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
-	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:104)
-	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:98)
-	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$invokeBeforeAllMethods$8(ClassBasedTestDescriptor.java:375)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.invokeBeforeAllMethods(ClassBasedTestDescriptor.java:373)
-	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.before(ClassBasedTestDescriptor.java:193)
-	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.before(ClassBasedTestDescriptor.java:78)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:132)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:125)
-	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:135)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:123)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:122)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:80)
-	at java.util.ArrayList.forEach(ArrayList.java:1259)
-	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:38)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:139)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:125)
-	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:135)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:123)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:122)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:80)
-	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:32)
-	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
-	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:51)
-	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:229)
-	at org.junit.platform.launcher.core.DefaultLauncher.lambda$execute$6(DefaultLauncher.java:197)
-	at org.junit.platform.launcher.core.DefaultLauncher.withInterceptedStreams(DefaultLauncher.java:211)
-	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:191)
-	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:128)
-	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.processAllTestClasses(JUnitPlatformTestClassProcessor.java:102)
-	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.access$000(JUnitPlatformTestClassProcessor.java:82)
-	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor.stop(JUnitPlatformTestClassProcessor.java:78)
-	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.stop(SuiteTestClassProcessor.java:61)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:35)
-	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
-	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:32)
-	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:93)
-	at com.sun.proxy.$Proxy2.stop(Unknown Source)
-	at org.gradle.api.internal.tasks.testing.worker.TestWorker.stop(TestWorker.java:132)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:35)
-	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
-	at org.gradle.internal.remote.internal.hub.MessageHubBackedObjectConnection$DispatchWrapper.dispatch(MessageHubBackedObjectConnection.java:175)
-	at org.gradle.internal.remote.internal.hub.MessageHubBackedObjectConnection$DispatchWrapper.dispatch(MessageHubBackedObjectConnection.java:157)
-	at org.gradle.internal.remote.internal.hub.MessageHub$Handler.run(MessageHub.java:404)
-	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:63)
-	at org.gradle.internal.concurrent.ManagedExecutorImpl$1.run(ManagedExecutorImpl.java:46)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
-	at org.gradle.internal.concurrent.ThreadFactoryImpl$ManagedThreadRunnable.run(ThreadFactoryImpl.java:55)
-	at java.lang.Thread.run(Thread.java:748)
-
-Oct 27, 2020 11:54:51 AM org.aspectj.weaver.tools.Jdk14Trace info
-INFO: Dumping to /Users/user/IdeaProjects/market_rest_assured_d/./ajcore.20201027.115451.144.txt
 </pre>
 </span>
 </div>
@@ -22801,7 +22575,7 @@ INFO: Dumping to /Users/user/IdeaProjects/market_rest_assured_d/./ajcore.2020102
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 5.2.1</a> at Oct 27, 2020 11:55:07 AM</p>
+<a href="http://www.gradle.org">Gradle 6.7</a> at Oct 27, 2020, 12:14:39 PM</p>
 </div>
 </div>
 </body>

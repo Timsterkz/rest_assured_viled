@@ -45,19 +45,19 @@ class ApiTest extends TestBase{
     void listOfAttrAndValues() {
         RestAssuredSteps.listOfAttrAndValues(token);
     }
-    @Test
-    @Order(6)
-    @DisplayName("добавление атрибутов")
-    void AddAttributes() throws JsonProcessingException {
-        RestAssuredSteps.addAttributes(token);
-    }
+//    @Test
+//    @Order(6)
+//    @DisplayName("добавление атрибутов")
+//    void AddAttributes() throws JsonProcessingException {
+//        RestAssuredSteps.addAttributes(token);
+//    }
 
-    @Test
-    @Order(7)
-    @DisplayName("добавление значение атрибутов")
-    void AddAttributesValues() {
-        RestAssuredSteps.addAttributesValues(token);
-    }
+//    @Test
+//    @Order(7)
+//    @DisplayName("добавление значение атрибутов")
+//    void AddAttributesValues() {
+//        RestAssuredSteps.addAttributesValues(token);
+//    }
 
     @Test
     @Order(8)
@@ -72,12 +72,12 @@ class ApiTest extends TestBase{
     void createItem() {
         RestAssuredSteps.draftToModeration(token);
     }
-    @Test
-    @Order(9)
-    @DisplayName("удаление атрибутов")
-    void deleteAttribute() {
-        RestAssuredSteps.deleteAttributes(token);
-    }
+//    @Test
+//    @Order(9)
+//    @DisplayName("удаление атрибутов")
+//    void deleteAttribute() {
+//        RestAssuredSteps.deleteAttributes(token);
+//    }
     @Test
     @Order(9)
     @DisplayName("удаление складов")
