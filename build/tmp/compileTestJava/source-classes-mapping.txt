@@ -1,0 +1,46 @@
+market/tests/ApiTest.java
+ market.tests.ApiTest
+market/api/model/Address.java
+ market.api.model.Address
+market/api/model/Map.java
+ market.api.model.Map
+market/api/model/Merchant.java
+ market.api.model.Merchant
+market/config/ConfigHelper.java
+ market.config.ConfigHelper
+market/tests/TestBase.java
+ market.tests.TestBase
+market/api/model/MultipartItem.java
+ market.api.model.MultipartItem
+market/api/model/Attribute.java
+ market.api.model.Attribute
+market/api/model/ValuesOnDiffLocale.java
+ market.api.model.ValuesOnDiffLocale
+market/api/model/CityDto.java
+ market.api.model.CityDto
+market/config/TestDataConfig.java
+ market.config.TestDataConfig
+market/api/model/ItemSubscription.java
+ market.api.model.ItemSubscription
+market/config/ApiConfig.java
+ market.config.ApiConfig
+market/api/model/DraftItem.java
+ market.api.model.DraftItem
+market/api/restassured/steps/RestAssuredSteps.java
+ market.api.restassured.steps.RestAssuredSteps
+market/api/model/SignInUser.java
+ market.api.model.SignInUser
+market/api/model/Token.java
+ market.api.model.Token
+market/api/model/Brand.java
+ market.api.model.Brand
+market/api/model/Schedule.java
+ market.api.model.Schedule
+market/api/model/SignInMerchantModerator.java
+ market.api.model.SignInMerchantModerator
+market/api/model/Stock.java
+ market.api.model.Stock
+market/api/restassured/spec/CustomSpec.java
+ market.api.restassured.spec.CustomSpec
+market/api/model/AttributeValues.java
+ market.api.model.AttributeValues
