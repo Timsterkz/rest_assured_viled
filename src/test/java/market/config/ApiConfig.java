@@ -8,7 +8,7 @@ import org.aeonbits.owner.Config;
         "classpath:api.properties"
 })
 public interface ApiConfig extends Config {
-    @DefaultValue("https://api.dev.vlife.kz")
+    @DefaultValue("https://api-test.vlife.kz")
     String baseURL();
 
     @DefaultValue("/market/core")

@@ -170,7 +170,7 @@ public class RestAssuredSteps {
                 .log().body()
                 .extract()
                 .response();
-        catId = categoryId.path("list[1].children[0].children[0].id");
+        catId = categoryId.path("list[0].children[1].children[1].id");
         System.out.println(catId);
     }
 
