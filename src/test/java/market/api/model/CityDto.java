@@ -9,15 +9,15 @@ public class CityDto {
     public CityDto() {
     }
 
-    public CityDto(String code, String countryCode, String countryName, Integer id, Map map) {
+    public CityDto(String code, String countryCode, String countryName, Integer id, Coordinate coordinate) {
         this.code = code;
         this.countryCode = countryCode;
         this.countryName = countryName;
         this.id = id;
-        this.map = map;
+        this.coordinate = coordinate;
     }
 
-    private Map map;
+    private Coordinate coordinate;
 
     public String getCode() {
         return code;
@@ -51,12 +51,12 @@ public class CityDto {
         this.id = id;
     }
 
-    public Map getMap() {
-        return map;
+    public Coordinate getCoordinate() {
+        return coordinate;
     }
 
-    public void setMap(Map map) {
-        this.map = map;
+    public void setCoordinate(Coordinate coordinate) {
+        this.coordinate = coordinate;
     }
 }
 //  "cityDto": {
