@@ -15,14 +15,14 @@ class ApiTest extends TestBase{
     @Test
     @Order(2)
     @DisplayName("Создание склада")
-    void CreationOfStock() throws JsonProcessingException {
+    void CreationOfStock()  {
         RestAssuredSteps.CreateStock();
     }
 
     @Test
     @Order(3)
     @DisplayName("список складов")
-    void GetListOfStock() throws JsonProcessingException {
+    void GetListOfStock()  {
         RestAssuredSteps.GetListOfStock();
     }
 
@@ -48,7 +48,7 @@ class ApiTest extends TestBase{
    @Test
     @Order(6)
     @DisplayName("добавление атрибутов")
-    void AddAttributes() throws JsonProcessingException {
+    void AddAttributes()  {
         RestAssuredSteps.addAttributes();
     }
 
@@ -84,36 +84,85 @@ class ApiTest extends TestBase{
     void deleteStock() {
         RestAssuredSteps.deleteStock();
     }
+
+//    @Test
+//    @Order(12)
+//    @DisplayName("проверка на наличие атрибутов у категории ")
+//    void checkTheExistenceOfAttrInCategory() {
+//        RestAssuredSteps.AttrInCategory();
+//    }
+    /// нужно сделать проверку на наличие атрибутов у категории
     @Test
-    @Order(12)
+    @Order(13)
     @DisplayName("создание товара через модератора")
-    void moderatorCreateItem() {
+    void moderatorCreateItem() throws JsonProcessingException {
         RestAssuredSteps.CreateItemModerator();
     }
+
 //    @Test
-//    @Order(13)
+//    @Order(14)
+//    @DisplayName("загрузка прайслиста с имеющиесями товарами с мастера товара")
+//    void pricelistModerator() {
+//        RestAssuredSteps.UploadPricelistModerator();
+//    }
+    @Test
+    @Order(15)
+    @DisplayName("загрузка прайслиста с подписанными товарами")
+    void pricelistWithSubcribedItems() {
+        RestAssuredSteps.UploadPricelistModerator();
+    }
+//    @Test
+//    @Order(16)
+//    @DisplayName("проверка на наличие товаров в неопубликованных/опубликованных с ценой и складами из прайслиста")
+//    void checkPublishedUnpublishedWithPriceAndStocks() {
+//        RestAssuredSteps.CheckPublishedUnpublished();
+//    }
+//    @Test
+//    @Order(17)
+//    @DisplayName("активировать товар с неопубликованных")
+//    void ActivationItemsFromUnpublished() {
+//        RestAssuredSteps.ItemActivation();
+//    }
+//    @Test
+//    @Order(18)
+//    @DisplayName("проверка наличия опубликованных товаров в приложении")
+//    void CheckingCatalogOfPublishedItems() {
+//        RestAssuredSteps.CheckExistenceOfItemsInMobile();
+//    }
+//
+//    @Test
+//    @Order(19)
+//    @DisplayName("вывод списка мерчанта")
+//    void GetlistOfMerchants() {
+//        RestAssuredSteps.ListOfMerchants();
+//    }
+//
+//
+//    @Test
+//    @Order(20)
 //    @DisplayName("создание заказа")
 //    void creationOrder() {
 //        RestAssuredSteps.CreateOrder();
 //    }
 //    @Test
-//    @Order(14)
+//    @Order(21)
 //    @DisplayName("поменять на статус оплачен")
 //    void changeStatusPayed() {
 //        RestAssuredSteps.ChangeStatus();
 //    }
 //    @Test
-//    @Order(15)
+//    @Order(22)
 //    @DisplayName("поменять на статус потвержден")
 //    void changeStatusConfirmed() {
 //        RestAssuredSteps.ChangeStatus();
 //    }
 //    @Test
-//    @Order(16)
+//    @Order(23)
 //    @DisplayName("поменять на статус доставлен/забран")
 //    void changeStatusDelivered() {
 //        RestAssuredSteps.ChangeStatus();
 //    }
+
 
 
 //    @Test

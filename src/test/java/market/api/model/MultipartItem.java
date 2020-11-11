@@ -1,16 +1,23 @@
 package market.api.model;
 
+import java.util.List;
+
 public class MultipartItem {
     private String vendorCode;
     private ValuesOnDiffLocale brand;
     private String barCode;
     private ValuesOnDiffLocale names;
     private Integer categoryId;
-    private String attributeValues;
+    private List<AttributeValues> attributeValues;
 
-    public MultipartItem(String vendorCode193, ValuesOnDiffLocale brand, String barcode12, ValuesOnDiffLocale names, Integer catId, AttributeValues attrValues) {
+    public MultipartItem(String vendorCode, ValuesOnDiffLocale brand, String barCode, ValuesOnDiffLocale names, Integer categoryId, List<AttributeValues> attributeValues) {
+        this.vendorCode = vendorCode;
+        this.brand = brand;
+        this.barCode = barCode;
+        this.names = names;
+        this.categoryId = categoryId;
+        this.attributeValues = attributeValues;
     }
-
 
     public String getVendorCode() {
         return vendorCode;
@@ -52,11 +59,11 @@ public class MultipartItem {
         this.categoryId = categoryId;
     }
 
-    public String getAttributeValues() {
+    public List<AttributeValues> getAttributeValues() {
         return attributeValues;
     }
 
-    public void setAttributeValues(String attributeValues) {
+    public void setAttributeValues(List<AttributeValues> attributeValues) {
         this.attributeValues = attributeValues;
     }
 }

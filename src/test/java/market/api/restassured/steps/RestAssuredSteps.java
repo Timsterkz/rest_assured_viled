@@ -3,9 +3,7 @@ package market.api.restassured.steps;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.ObjectWriter;
-import io.restassured.builder.MultiPartSpecBuilder;
 import io.restassured.http.ContentType;
-import io.restassured.http.Header;
 import io.restassured.response.Response;
 import market.api.model.*;
 import market.api.restassured.spec.Utils;
@@ -16,22 +14,23 @@ import java.util.*;
 
 import static io.restassured.RestAssured.given;
 import static io.restassured.http.Method.*;
-import static market.api.restassured.spec.CustomSpec.*;
-import static org.hamcrest.Matchers.is;
-import static org.hamcrest.Matchers.notNullValue;
+import static market.api.restassured.spec.CustomSpec.executeRequestWithSpec;
+import static market.api.restassured.spec.CustomSpec.speci;
 
 public class RestAssuredSteps {
 
-    protected static String token;
-    protected static Long merchantId;
-    protected static Integer stockId;
-    protected static Integer catId;
-    protected static Integer attributId;
-    protected static Integer draftItemId;
-    protected static Integer itemId;
-    protected static Integer attributeValueId;
-    protected static Long itemPriceId;
-    protected static String path = "./src/test/java/market/api/restassured/steps/files/";
+    private static String token;
+    private static Long merchantId;
+    private static Integer stockId;
+    private static Integer catId;
+    private static Integer attributId;
+    private static Integer draftItemId;
+    private static Integer itemId;
+    private static Integer attributeValueId;
+    private static Integer itemPriceId;
+    private static String path = "./src/test/java/market/api/restassured/steps/files/Н0000022828.jpeg";
+    private static String path2 = "./src/test/java/market/api/restassured/steps/files/Н0000022828.jpeg";
+    private static String path3 = "./src/test/java/market/api/restassured/steps/files/test.xlsx";
 
 
 
@@ -51,7 +50,6 @@ public class RestAssuredSteps {
                 .extract()
                 .response()
                 .as(Token.class);
-
         return token = token1.getAccessToken();
     }
 
@@ -162,6 +160,7 @@ public class RestAssuredSteps {
         attributeValueId = attrValId.path("id");
     }
 
+    // изменить ручку на https://api.dev.vlife.kz/market/core/v1/category/unsubscribe/attribute/9418?categoryIds=32358
     public static void deleteAttributes() {
         executeRequestWithSpec(DELETE,ConfigHelper.getBaseURL()+ ConfigHelper.getBasePath()+"/v1/attribute/"+attributId, null);
 
@@ -231,54 +230,76 @@ public static void draftToModeration() {
                 .extract()
                 .response();
     }
-///not ready
-public static void CreateItemModerator() {
+///// not changed the method
+    public static void AttrInCategory() {
+        ItemSubscription itemSubscription = new ItemSubscription();
+        given()
+//                .spec(speci().BodyOfRequest(itemSubscription))
+                .when()
+                .post("/v1/items/{itemId}/subscribe", itemId )
+                .then()
+                .log().body()
+                .statusCode(200)
+                .log().body()
+                .extract()
+                .response();
+    }
+/// нужно сделать проверку на наличие атрибутов у категории
+    //не сохраняются картинки
+public static void CreateItemModerator() throws JsonProcessingException {
 //    Brand brand = new Brand();names instead of brand
-    ValuesOnDiffLocale names = new ValuesOnDiffLocale("en","en","en","en","en");
-    AttributeValues attrValues = new AttributeValues();
+    String generatedString = Utils.getRandomString(20);
 
-    MultipartItem multi = new MultipartItem("vendorCode193", names, "barcode12", names, catId, attrValues);
-    Response itemPrice = given()
+    ValuesOnDiffLocale names = new ValuesOnDiffLocale(generatedString,generatedString,generatedString,generatedString,generatedString);
+    AttributeValues attributes1 =  new AttributeValues( attributId, attributeValueId,  true, "value1");
+    AttributeValues attributes2 =  new AttributeValues( attributId, attributeValueId,  true, "value1");
+    List<AttributeValues> attrValues = Arrays.asList();
 
-            .spec(speci().requestWithAuth())
-//            .contentType("multipart/form-data, boundary=----WebKitFormBoundarybUqVoXGYBAVgmwZw")
-//    Content-Disposition: form-data; name="request"; filename="blob"
-//            .multiPart(new MultiPartSpecBuilder(path).fileName("Н0000022828.jpeg")
-//                    .controlName("files")
-//                    .mimeType("image/jpeg")
-//                    .build())
-//            .multiPart(new MultiPartSpecBuilder(path).fileName("/Снимок экрана 2020-10-22 в 18.36.38.png")
-//                    .controlName("files")
-//                    .mimeType("image/png")
-//                    .build())
-            .multiPart(new MultiPartSpecBuilder(multi)
-                    .fileName("blob")
-                    .controlName("request")
-                    .mimeType("application/json")
-                    .build())
+    MultipartItem multi = new MultipartItem("bananretVendorCode", names, "bananretBarcode", names, catId, attrValues);
+
+    ObjectWriter ow = new ObjectMapper().writer().withDefaultPrettyPrinter();
+    String json = ow.writeValueAsString(multi);
+    System.out.println(json);
+
+    Response item = given()
+            .log().body()
+
+            .auth().oauth2(token)
+////            .multiPart(new MultiPartSpecBuilder(path).fileName("/Снимок экрана 2020-10-22 в 18.36.38.png")
+////                    .controlName("files")
+////                    .mimeType("image/png")
+////                    .build())
+            .multiPart("files", new File(path), "image/jpeg")
+            .multiPart("files", new File(path2), "image/png")
+            .multiPart("request", multi, "application/json")
+//            .multiPart("files", path )
+            .log().everything()
             .when()
             .post(ConfigHelper.getBaseURL()+ ConfigHelper.getBasePath()+"/v1/items/multipart")
             .then()
+            .log().body()
             .statusCode(200)
             .log().body()
             .extract()
             .response();
-    itemPriceId = itemPrice.path("id");
+    itemId = item.path("id");
 
 
 }
 
 
+
     ///not ready
     public static void CreateOrder() {
-//        Address address = new Address("city", cityId, "country", Integer flat, Integer house, String street);
-//        Gift gift = new Gift(String name, String phoneNumber, String surname);
-//        Price price = new Price("String currency", Integer value);
-//        Delivery delivery = new Delivery( address, "courierType", " deliveryDate",  gift,  price);
-//        OrderInputDto order = new OrderInputDto(delivery, itemPriceId, 1 );
+        Address address = new Address("Almaty", 2, "Kazakhstan", 21,2, "Kazybek Bi");
+        Gift gift = new Gift("Daniyar","77029203758","Mukhtarkhanov");
+        Price price = new Price("kzt", 123);
+        Delivery delivery = new Delivery( address, "Express", "today",  gift,  price);
+        OrderInputDto order = new OrderInputDto(delivery, itemPriceId, 1 );
+
         given()
                 .when()
-//                .body(order)
+                .body(order)
                 .post("/v1/orders" )
                 .then()
                 .log().body()
@@ -290,6 +311,75 @@ public static void CreateItemModerator() {
 
     ///not ready
     public static void ChangeStatus() {
+        ItemSubscription itemSubscription = new ItemSubscription();
+        given()
+                .when()
+                .post("/v1/items/{itemId}/subscribe", itemId )
+                .then()
+                .log().body()
+                .statusCode(200)
+                .log().body()
+                .extract()
+                .response();
+    }
+/////////////////////////////// not changed the methods
+    public static void UploadPricelistModerator() {
+
+        Response item = given()
+                .log().body()
+                .header("Accept-language", "ru")
+
+                .auth().oauth2(token)
+                .multiPart("file", new File(path3), "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet")
+                .log().everything()
+                .when()
+                .post(ConfigHelper.getBaseURL()+ ConfigHelper.getBasePath()+"/v1/imports/pricelist")
+                .then()
+                .log().body()
+                .statusCode(200)
+                .log().body()
+                .extract()
+                .response();
+        Integer quantityOfUnreconzed = item.path("unrecognized");
+    }
+
+    public static void CheckPublishedUnpublished() {
+        ItemSubscription itemSubscription = new ItemSubscription();
+        given()
+                .when()
+                .post("/v1/items/{itemId}/subscribe", itemId )
+                .then()
+                .log().body()
+                .statusCode(200)
+                .log().body()
+                .extract()
+                .response();
+    }
+    public static void ItemActivation() {
+        ItemSubscription itemSubscription = new ItemSubscription();
+        given()
+//                .spec(speci().BodyOfRequest(itemSubscription))
+                .when()
+                .post("/v1/items/{itemId}/subscribe", itemId )
+                .then()
+                .log().body()
+                .statusCode(200)
+                .log().body()
+                .extract()
+                .response();
+    }    public static void CheckExistenceOfItemsInMobile() {
+        ItemSubscription itemSubscription = new ItemSubscription();
+        given()
+//                .spec(speci().BodyOfRequest(itemSubscription))
+                .when()
+                .post("/v1/items/{itemId}/subscribe", itemId )
+                .then()
+                .log().body()
+                .statusCode(200)
+                .log().body()
+                .extract()
+                .response();
+    }    public static void ListOfMerchants() {
         ItemSubscription itemSubscription = new ItemSubscription();
         given()
 //                .spec(speci().BodyOfRequest(itemSubscription))
@@ -306,13 +396,5 @@ public static void CreateItemModerator() {
 
 
 
-//    {
-//    "merchantVendorCode": "dsfs34fwe",
-//    "price": "12243",
-//    "productCode": "asfdsfwq",
-//    "quantity": 1,
-//    "stockIdList": [398]
-//}
-//https://api.dev.vlife.kz/market/core/v1/items/{{item}}/subscribe
-//    https://api.dev.vlife.kz/market/core/v1/drafts/items/{{draftItemId}}/create
+
 }
